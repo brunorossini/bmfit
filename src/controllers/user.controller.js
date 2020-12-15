@@ -9,7 +9,12 @@ export default {
   create: async (req, res) => {
     const user = new User(req.body);
 
-    await user.save();
-    return res.json(user);
+    try {
+      await user.save();
+      return res.json(user);
+    } catch (error) {
+      console.log(error);
+      return res.status(400).json(error);
+    }
   },
 };

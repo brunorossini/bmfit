@@ -3,7 +3,10 @@ import bcrypt from "bcryptjs";
 
 const schema = new Schema({
   name: String,
-  email: String,
+  email: {
+    type: Schema.Types.String,
+    unique: true,
+  },
   password: String,
   phone: String,
   provider: Boolean,

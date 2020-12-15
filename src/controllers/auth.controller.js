@@ -2,6 +2,11 @@ import User from "../models/User";
 import session from "../lib/session";
 
 export default {
+  index: async (req, res) => {
+    const user = await User.findOne({ _id: req.user });
+
+    res.json(user);
+  },
   create: async (req, res) => {
     const { email, password } = req.body;
 
