@@ -10,6 +10,6 @@ router.get("/", AppointmentController.index);
 
 router.post("/", Validate(Schema.create), AppointmentController.create);
 
-// router.delete("/:id", AddressController.delete);
+router.delete("/:id", AppointmentController.delete);
 
 export default router;

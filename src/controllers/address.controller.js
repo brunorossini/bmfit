@@ -15,9 +15,7 @@ export default {
   delete: async (req, res) => {
     const { id } = req.params;
 
-    const { deletedCount } = await Address.deleteOne({ _id: id });
-
-    if (deletedCount === 0) return res.json({ msg: "Object not found" });
+    await Address.deleteOne({ _id: id });
 
     return res.json({ msg: "Object deleted" });
   },
