@@ -9,7 +9,10 @@ const schema = new Schema({
   },
   password: String,
   phone: String,
-  provider: Boolean,
+  provider: {
+    type: Schema.Types.Boolean,
+    default: false,
+  },
 });
 
 schema.pre("save", async function (next) {
