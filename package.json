@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/server.js",
-    "build": "sucrase ./src -d ./dist --transforms imports"
+    "build": "sucrase ./src -d ./dist --transforms imports",
+    "deploy": "sucrase ./src -d ./dist --transforms imports && pm2 start ecosystem.config.js --env production"
   },
   "keywords": [],
   "author": "",
