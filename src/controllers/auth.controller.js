@@ -16,8 +16,9 @@ export default {
 
     if (await user.comparePassword(password)) {
       const token = session.create(user);
+      const { name, email } = user;
 
-      return res.json({ token });
+      return res.json({ token, user: { name, email } });
     } else {
       return res.status(401).json({ msg: "Password not does match" });
     }
