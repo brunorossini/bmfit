@@ -18,7 +18,7 @@ module.exports = {
   deploy: {
     production: {
       host: "aws-ronaldo", /// configure aws-geo no arquvio ~/.ssh/config
-      user: "bitname",
+      user: "bitnami",
       ref: "origin/master",
       repo: "git@github.com:brunorossini/bmfit.git",
       path: "/home/bitnami/bmfit",
