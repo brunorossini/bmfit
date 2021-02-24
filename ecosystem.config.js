@@ -23,7 +23,7 @@ module.exports = {
       repo: "git@github.com:brunorossini/bmfit.git",
       path: "/home/bitnami/application",
       "post-deploy":
-        "npm install && sucrase ./src -d ./dist --transforms imports && pm2 start ecosystem.config.js --env production",
+        "npm install && sucrase ./src -d ./dist --transforms imports && pm2 startOrRestart ecosystem.config.js --env production",
       env: {
         NODE_ENV: "production",
       },
