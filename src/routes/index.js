@@ -5,17 +5,16 @@ import user from "./user.route";
 import auth from "./auth.route";
 import appointment from "./appointment.route";
 import provider from "./provider.route";
+import test from "./test.route";
 
 import isAuthenticated from "../middlewares/auth.middleware";
 
 const router = Router();
 
+router.use("/test", test);
+
 router.use("/auth", auth);
 router.use("/users", user);
-
-router.get("/test", (req, res) => {
-  res.send("ola mundo");
-});
 
 router.use(isAuthenticated);
 
