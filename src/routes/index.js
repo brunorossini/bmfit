@@ -13,7 +13,7 @@ const router = Router();
 router.use("/auth", auth);
 router.use("/users", user);
 
-router.use("/test", (req, res) => {
+router.get("/test", (req, res) => {
   res.send("ola mundo");
 });
 
