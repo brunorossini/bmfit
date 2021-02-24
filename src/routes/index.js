@@ -13,13 +13,14 @@ const router = Router();
 router.use("/auth", auth);
 router.use("/users", user);
 
+router.use("/test", (req, res) => {
+  res.send("ola mundo");
+});
+
 router.use(isAuthenticated);
 
 router.use("/addresses", address);
 router.use("/appointments", appointment);
 router.use("/providers", provider);
-router.use("/test", (req, res) => {
-  res.send('ola mundo')
-});
 
 export default router;
