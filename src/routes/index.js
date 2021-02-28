@@ -11,8 +11,6 @@ import isAuthenticated from "../middlewares/auth.middleware";
 
 const router = Router();
 
-router.use("/test", test);
-
 router.use("/auth", auth);
 router.use("/users", user);
 
