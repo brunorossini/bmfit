@@ -6,7 +6,7 @@ export default {
     const payload = {
       sub: user._id,
       iat: dateFns.getUnixTime(new Date()),
-      exp: dateFns.getUnixTime(dateFns.addMinutes(new Date(), 30)),
+      exp: dateFns.getUnixTime(dateFns.addDays(new Date(), 30)),
     };
 
     return jwt.encode(payload, process.env.TOKEN_SECRET);
