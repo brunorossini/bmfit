@@ -12,6 +12,12 @@ export default {
     await address.save();
     return res.json(address);
   },
+  update: async (req, res) => {
+    const address = Address.findById(req.params.id);
+    await address.update({ ...req.body });
+
+    return res.end();
+  },
   delete: async (req, res) => {
     const { id } = req.params;
 

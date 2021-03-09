@@ -5,7 +5,6 @@ import user from "./user.route";
 import auth from "./auth.route";
 import appointment from "./appointment.route";
 import provider from "./provider.route";
-import test from "./test.route";
 
 import isAuthenticated from "../middlewares/auth.middleware";
 
