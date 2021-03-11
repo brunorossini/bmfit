@@ -29,8 +29,6 @@ export default {
       },
     });
 
-    const appointments = [];
-
     const schedule = [
       "08:00",
       "09:00",
