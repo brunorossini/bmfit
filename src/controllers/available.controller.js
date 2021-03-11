@@ -20,25 +20,7 @@ export default {
 
     const searchDate = Number(date);
 
-    const appointments = await Appointment.find({
-      provider: providerId,
-      canceled_at: null,
-      canceled_at: {
-        $gte: startOfDay(searchDate),
-        $lt: endOfDay(searchDate),
-      },
-    });
-
-    // return res.json(appointments);
-    // const appointments = await Appointment.findAll({
-    //   where: {
-    //     provider: providerId,
-    //     canceled_at: null,
-    //     date: {
-    //       [Op.between]: [startOfDay(searchDate), endOfDay(searchDate)],
-    //     },
-    //   },
-    // });
+    const appointments = [];
 
     const schedule = [
       "08:00",
@@ -56,9 +38,10 @@ export default {
     ];
 
     const available = schedule.map((time) => {
-      const [hour, minute] = time.split("");
+      const [hour, minute] = time.split(":");
       const value = setSeconds(
-        setMinutes(setHours(searchDate, hour), minute, 0)
+        setMinutes(setHours(searchDate, parseInt(hour)), minute),
+        0
       );
 
       return {
