@@ -23,7 +23,7 @@ export default {
     const appointments = await Appointment.find({
       provider: providerId,
       canceled_at: null,
-      canceled_at: {
+      date: {
         $gte: startOfDay(searchDate),
         $lt: endOfDay(searchDate),
       },
