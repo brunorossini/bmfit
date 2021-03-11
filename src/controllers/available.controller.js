@@ -20,7 +20,7 @@ export default {
 
     const searchDate = Number(date);
 
-    const appointments = await Appointment.find({
+    const appointments = await Appointment.findOne({
       provider: providerId,
       canceled_at: null,
       canceled_at: {
