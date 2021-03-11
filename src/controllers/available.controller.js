@@ -30,15 +30,15 @@ export default {
     });
 
     // return res.json(appointments);
-    const appointments = await Appointment.findAll({
-      where: {
-        provider: providerId,
-        canceled_at: null,
-        date: {
-          [Op.between]: [startOfDay(searchDate), endOfDay(searchDate)],
-        },
-      },
-    });
+    // const appointments = await Appointment.findAll({
+    //   where: {
+    //     provider: providerId,
+    //     canceled_at: null,
+    //     date: {
+    //       [Op.between]: [startOfDay(searchDate), endOfDay(searchDate)],
+    //     },
+    //   },
+    // });
 
     const schedule = [
       "08:00",
