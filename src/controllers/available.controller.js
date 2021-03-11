@@ -44,8 +44,6 @@ export default {
       "19:00",
     ];
 
-    console.log(appointments.find((a) => format(a.date, "HH:mm")));
-
     const available = schedule.map((time) => {
       const [hour, minute] = time.split(":");
       const value = setSeconds(
