@@ -1,5 +1,4 @@
 import Appointment from "../models/Appointment";
-import { Op } from "sequelize";
 import {
   endOfDay,
   format,
@@ -21,15 +20,24 @@ export default {
 
     const searchDate = Number(date);
 
-    const appointments = await Appointment.findAll({
-      where: {
-        provider: providerId,
-        canceled_at: null,
-        date: {
-          [Op.between]: [startOfDay(searchDate), endOfDay(searchDate)],
-        },
+    const appointments = await Appointment.find({
+      provider: providerId,
+      canceled_at: null,
+      canceled_at: {
+        $gte: startOfDay(searchDate),
+        $lt: endOfDay(searchDate),
       },
     });
+
+    // const appointments = await Appointment.findAll({
+    //   where: {
+    //     provider: providerId,
+    //     canceled_at: null,
+    //     date: {
+    //       [Op.between]: [startOfDay(searchDate), endOfDay(searchDate)],
+    //     },
+    //   },
+    // });
 
     const schedule = [
       "08:00",
