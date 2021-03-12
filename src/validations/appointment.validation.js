@@ -4,6 +4,6 @@ export default {
   create: Joi.object({
     date: Joi.date().min(new Date()).required(),
     provider: Joi.string().required(),
-    location: Joi.string().required(),
+    address: Joi.string().required(),
   }),
 };

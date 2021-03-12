@@ -1,17 +1,17 @@
 import { Router } from "express";
 import Validate from "../middlewares/schema.middleware";
-import Schema from "../validations/location.validation";
+import Schema from "../validations/address.validation";
 
-import LocationController from "../controllers/location.controller";
+import AddressController from "../controllers/address.controller";
 
 const router = Router();
 
-router.get("/", LocationController.index);
+router.get("/", AddressController.index);
 
-router.post("/", Validate(Schema.create), LocationController.create);
+router.post("/", Validate(Schema.create), AddressController.create);
 
-router.put("/:id", Validate(Schema.create), LocationController.update);
+router.put("/:id", Validate(Schema.create), AddressController.update);
 
-router.delete("/:id", LocationController.delete);
+router.delete("/:id", AddressController.delete);
 
 export default router;

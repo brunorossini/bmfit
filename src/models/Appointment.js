@@ -11,9 +11,9 @@ const schema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "User",
   },
-  location: {
+  address: {
     type: Schema.Types.ObjectId,
-    ref: "Location",
+    ref: "Address",
   },
 });
 
