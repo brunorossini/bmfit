@@ -10,11 +10,12 @@ export default {
     return res.json(appointments);
   },
   create: async (req, res) => {
-    const { date, provider } = req.body;
+    const { date, provider, address } = req.body;
 
     const hourStart = dateFns.startOfHour(dateFns.parseISO(date));
 
     const checkAvailable = await Appointment.findOne({
+      address,
       provider,
       canceled_at: null,
       date: hourStart,
