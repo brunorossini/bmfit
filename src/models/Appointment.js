@@ -13,7 +13,7 @@ const schema = new Schema({
   },
   address: {
     type: Schema.Types.ObjectId,
-    ref: "Address",
+    ref: "Adress",
   },
 });
 
