@@ -15,7 +15,6 @@ export default {
     const hourStart = dateFns.startOfHour(dateFns.parseISO(date));
 
     const checkAvailable = await Appointment.findOne({
-      address,
       provider,
       canceled_at: null,
       date: hourStart,
@@ -35,6 +34,7 @@ export default {
       provider,
       date: hourStart,
       user: req.user,
+      address,
     });
 
     await appointment.save();
