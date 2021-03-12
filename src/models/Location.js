@@ -15,4 +15,4 @@ const schema = new Schema({
   },
 });
 
-export default mongoose.model("Address", schema);
+export default mongoose.model("Location", schema);

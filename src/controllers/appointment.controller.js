@@ -10,7 +10,7 @@ export default {
     return res.json(appointments);
   },
   create: async (req, res) => {
-    const { date, provider, address } = req.body;
+    const { date, provider, location } = req.body;
 
     const hourStart = dateFns.startOfHour(dateFns.parseISO(date));
 
@@ -34,7 +34,7 @@ export default {
       provider,
       date: hourStart,
       user: req.user,
-      address,
+      location,
     });
 
     await appointment.save();
