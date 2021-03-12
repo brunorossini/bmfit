@@ -11,6 +11,10 @@ const schema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "User",
   },
+  address: {
+    type: Schema.Types.ObjectId,
+    ref: "Address",
+  },
 });
 
 export default mongoose.model("Appointment", schema);
