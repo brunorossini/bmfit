@@ -5,7 +5,9 @@ export default {
   index: async (req, res) => {
     const appointments = await Appointment.find({
       user: req.user,
-    });
+    })
+      .populate("provider")
+      .populate("address");
 
     return res.json(appointments);
   },
